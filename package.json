@@ -18,15 +18,6 @@
     "prettier:check": "prettier --check . --config .prettierrc",
     "prettier:fix": "prettier --write . --config .prettierrc",
     "lint": "yarn eslint && yarn prettier:check",
-    "deploy:mainnet": "truffle migrate --network mainnet",
-    "deploy:kovan": "truffle migrate --network kovan",
-    "deploy:dev": "truffle migrate --skip-dry-run --network test",
-    "init:mainnet": "truffle migrate -f 2 --to 2 --network mainnet",
-    "init:kovan": "truffle migrate -f 2 --to 2 --network kovan",
-    "init:test": "truffle migrate -f 2 --to 2 --network test",
-    "voucher:mainnet": "truffle migrate -f 3 --network mainnet",
-    "voucher:kovan": "truffle migrate -f 3 --network kovan",
-    "voucher:dev": "truffle migrate -f 3 --skip-dry-run --network test",
     "verify": "truffle run verify --network $NETWORK"
   },
   "devDependencies": {
@@ -48,7 +39,6 @@
   },
   "dependencies": {
     "@openzeppelin/contracts": "^3.1.0",
-    "dotenv": "^8.2.0",
     "eth-sig-util": "^2.5.3",
     "ethereumjs-util": "^7.0.3",
     "web3": "^1.2.11"
