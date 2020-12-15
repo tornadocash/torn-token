@@ -1,0 +1,56 @@
+{
+  "name": "torn-token",
+  "version": "1.0.0",
+  "main": "config.js",
+  "repository": "https://github.com/tornadocash/torn-token.git",
+  "author": "Tornadocash team <hello@tornado.cash>",
+  "license": "MIT",
+  "files": [
+    "config.js",
+    "contracts/*"
+  ],
+  "scripts": {
+    "compile": "truffle compile",
+    "coverage": "yarn compile && truffle run coverage",
+    "test": "truffle test",
+    "test:stacktrace": "yarn test --stacktrace",
+    "eslint": "eslint --ext .js --ignore-path .gitignore .",
+    "prettier:check": "prettier --check . --config .prettierrc",
+    "prettier:fix": "prettier --write . --config .prettierrc",
+    "lint": "yarn eslint && yarn prettier:check",
+    "deploy:mainnet": "truffle migrate --network mainnet",
+    "deploy:kovan": "truffle migrate --network kovan",
+    "deploy:dev": "truffle migrate --skip-dry-run --network test",
+    "init:mainnet": "truffle migrate -f 2 --to 2 --network mainnet",
+    "init:kovan": "truffle migrate -f 2 --to 2 --network kovan",
+    "init:test": "truffle migrate -f 2 --to 2 --network test",
+    "voucher:mainnet": "truffle migrate -f 3 --network mainnet",
+    "voucher:kovan": "truffle migrate -f 3 --network kovan",
+    "voucher:dev": "truffle migrate -f 3 --skip-dry-run --network test",
+    "verify": "truffle run verify --network $NETWORK"
+  },
+  "devDependencies": {
+    "@ticket721/e712": "^0.4.1",
+    "babel-eslint": "^10.1.0",
+    "bn-chai": "^1.0.1",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^7.5.0",
+    "prettier": "^2.1.2",
+    "prettier-plugin-solidity": "^1.0.0-alpha.59",
+    "rlp": "^2.2.6",
+    "solhint-plugin-prettier": "^0.0.4",
+    "solidity-coverage": "^0.7.7",
+    "truffle": "^5.1.29",
+    "truffle-flattener": "^1.4.4",
+    "truffle-hdwallet-provider": "^1.0.17",
+    "truffle-plugin-verify": "^0.3.11"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^3.1.0",
+    "dotenv": "^8.2.0",
+    "eth-sig-util": "^2.5.3",
+    "ethereumjs-util": "^7.0.3",
+    "web3": "^1.2.11"
+  }
+}
