@@ -1,6 +1,6 @@
 {
   "name": "torn-token",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "config.js",
   "repository": "https://github.com/tornadocash/torn-token.git",
   "author": "Tornadocash team <hello@tornado.cash>",
