@@ -226,7 +226,7 @@ module.exports = {
           100: '0x76D85B4C0Fc497EeCc38902397aC608000A06607',
           1000: '0xCC84179FFD19A1627E79F8648d09e095252Bc418',
           10000: '0x435aEa5B50CBE34CaC0b42d195da587b923200C3',
-          100000: '',
+          100000: undefined,
         },
         tokenAddress: '0xdc31ee1784292379fbb2964b3b9c4124d8f89c60',
         symbol: 'DAI',
