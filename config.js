@@ -223,10 +223,10 @@ module.exports = {
       },
       dai: {
         instanceAddress: {
-          1: '0x340EdB51d0FF1b8cC21E9b17f973ac5C7e8Eaf86',
-          10: '0x598d137acd2eCb6B5f962631415a1Fa4b8aeE8D8',
           100: '0x76D85B4C0Fc497EeCc38902397aC608000A06607',
-          1000: undefined,
+          1000: '0xCC84179FFD19A1627E79F8648d09e095252Bc418',
+          10000: '0x435aEa5B50CBE34CaC0b42d195da587b923200C3',
+          100000: '',
         },
         tokenAddress: "0xdc31ee1784292379fbb2964b3b9c4124d8f89c60",
         symbol: 'DAI',
