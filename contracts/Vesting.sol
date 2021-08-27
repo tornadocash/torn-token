@@ -6,7 +6,6 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/SafeERC20.sol";
 import "@openzeppelin/contracts/math/Math.sol";
 import "@openzeppelin/contracts/math/SafeMath.sol";
-import "./ENS.sol";
 
 /**
  * @title Vesting
@@ -14,16 +13,17 @@ import "./ENS.sol";
  * typical vesting scheme, with a cliff and vesting period. Optionally revocable by the
  * owner.
  */
-contract Vesting is EnsResolve {
+contract Vesting {
   using SafeERC20 for IERC20;
   using SafeMath for uint256;
 
   uint256 public constant SECONDS_PER_MONTH = 30 days;
 
   event Released(uint256 amount);
+  event BeneficiaryChanged(address newBeneficiary);
 
   // beneficiary of tokens after they are released
-  address public immutable beneficiary;
+  address public beneficiary;
   IERC20 public immutable token;
 
   uint256 public immutable cliffInMonths;
@@ -40,16 +40,16 @@ contract Vesting is EnsResolve {
    * @param _durationInMonths duration in months of the period in which the tokens will vest
    */
   constructor(
-    bytes32 _token,
+    address _token,
     address _beneficiary,
     uint256 _startTimestamp,
     uint256 _cliffInMonths,
     uint256 _durationInMonths
   ) public {
     require(_beneficiary != address(0), "Beneficiary cannot be empty");
-    require(_cliffInMonths <= _durationInMonths, "Cliff is greater than duration");
+    require(_cliffInMonths <= _durationInMonths, "Cliff cannot be greater than duration");
 
-    token = IERC20(resolve(_token));
+    token = IERC20(_token);
     beneficiary = _beneficiary;
     durationInMonths = _durationInMonths;
     cliffInMonths = _cliffInMonths;
@@ -67,6 +67,17 @@ contract Vesting is EnsResolve {
     token.safeTransfer(beneficiary, vested);
 
     emit Released(vested);
+  }
+
+  /**
+   * @notice Allows beneficiary to change his/her address.
+   * @param _beneficiary address of the beneficiary to whom vested tokens are transferred
+   */
+  function setBeneficiary(address _beneficiary) public {
+    require(msg.sender == beneficiary, "Not authorized");
+    require(_beneficiary != address(0), "Beneficiary cannot be empty");
+    beneficiary = _beneficiary;
+    emit BeneficiaryChanged(_beneficiary);
   }
 
   /**
@@ -94,7 +105,6 @@ contract Vesting is EnsResolve {
       uint256 vested = totalBalance.mul(elapsedMonths).div(durationInMonths);
       uint256 unreleased = vested.sub(released);
 
-      // currentBalance can be 0 in case of vesting being revoked earlier.
       return Math.min(currentBalance, unreleased);
     }
   }
