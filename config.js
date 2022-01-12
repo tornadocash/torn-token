@@ -32,6 +32,7 @@ module.exports = {
   rewardSwap: { address: 'reward-swap.contract.tornadocash.eth', poolWeight: 1e11 },
   tornadoTrees: { address: 'tornado-trees.contract.tornadocash.eth', levels: 20 },
   tornadoProxy: { address: 'tornado-proxy.contract.tornadocash.eth' },
+  tornadoProxyLight: { address: '0x0D5550d52428E7e3175bfc9550207e4ad3859b17' },
   rewardVerifier: { address: 'reward-verifier.contract.tornadocash.eth' },
   treeUpdateVerifier: { address: 'tree-update-verifier.contract.tornadocash.eth' },
   withdrawVerifier: { address: 'withdraw-verifier.contract.tornadocash.eth' },
@@ -208,6 +209,77 @@ module.exports = {
         tokenAddress: '0xC04B0d3107736C32e19F1c62b2aF67BE61d63a05',
         symbol: 'WBTC',
         decimals: 8,
+      },
+    },
+    netId10: {
+      eth: {
+        instanceAddress: {
+          0.1: '0x84443CFd09A48AF6eF360C6976C5392aC5023a1F',
+          1: '0xd47438C816c9E7f2E2888E060936a499Af9582b3',
+          10: '0x330bdFADE01eE9bF63C209Ee33102DD334618e0a',
+          100: '0x1E34A77868E19A6647b1f2F47B51ed72dEDE95DD',
+        },
+        symbol: 'ETH',
+        decimals: 18,
+      },
+    },
+    netId56: {
+      bnb: {
+        instanceAddress: {
+          0.1: '0x84443CFd09A48AF6eF360C6976C5392aC5023a1F',
+          1: '0xd47438C816c9E7f2E2888E060936a499Af9582b3',
+          10: '0x330bdFADE01eE9bF63C209Ee33102DD334618e0a',
+          100: '0x1E34A77868E19A6647b1f2F47B51ed72dEDE95DD',
+        },
+        symbol: 'BNB',
+        decimals: 18,
+      },
+    },
+    netId100: {
+      xdai: {
+        instanceAddress: {
+          100: '0x1E34A77868E19A6647b1f2F47B51ed72dEDE95DD',
+          1000: '0xdf231d99Ff8b6c6CBF4E9B9a945CBAcEF9339178',
+          10000: '0xaf4c0B70B2Ea9FB7487C7CbB37aDa259579fe040',
+          100000: '0xa5C2254e4253490C54cef0a4347fddb8f75A4998',
+        },
+        symbol: 'xDAI',
+        decimals: 18,
+      },
+    },
+    netId137: {
+      matic: {
+        instanceAddress: {
+          100: '0x1E34A77868E19A6647b1f2F47B51ed72dEDE95DD',
+          1000: '0xdf231d99Ff8b6c6CBF4E9B9a945CBAcEF9339178',
+          10000: '0xaf4c0B70B2Ea9FB7487C7CbB37aDa259579fe040',
+          100000: '0xa5C2254e4253490C54cef0a4347fddb8f75A4998',
+        },
+        symbol: 'MATIC',
+        decimals: 18,
+      },
+    },
+    netId42161: {
+      eth: {
+        instanceAddress: {
+          0.1: '0x84443CFd09A48AF6eF360C6976C5392aC5023a1F',
+          1: '0xd47438C816c9E7f2E2888E060936a499Af9582b3',
+          10: '0x330bdFADE01eE9bF63C209Ee33102DD334618e0a',
+          100: '0x1E34A77868E19A6647b1f2F47B51ed72dEDE95DD',
+        },
+        symbol: 'ETH',
+        decimals: 18,
+      },
+    },
+    netId43114: {
+      avax: {
+        instanceAddress: {
+          10: '0x330bdFADE01eE9bF63C209Ee33102DD334618e0a',
+          100: '0x1E34A77868E19A6647b1f2F47B51ed72dEDE95DD',
+          500: '0xaf8d1839c3c67cf571aa74B5c12398d4901147B3',
+        },
+        symbol: 'AVAX',
+        decimals: 18,
       },
     },
   },
