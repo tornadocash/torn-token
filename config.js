@@ -38,6 +38,11 @@ module.exports = {
   withdrawVerifier: { address: 'withdraw-verifier.contract.tornadocash.eth' },
   poseidonHasher2: { address: 'poseidon2.contract.tornadocash.eth' },
   poseidonHasher3: { address: 'poseidon3.contract.tornadocash.eth' },
+  feeManager: { address: 'fee-manager.contract.tornadocash.eth' },
+  tornadoStakingRewards: { address: 'staking-rewards.contract.tornadocash.eth' },
+  relayerRegistry: { address: 'relayer-registry.contract.tornadocash.eth' },
+  tornadoRouter: { address: 'tornado-router.contract.tornadocash.eth' },
+  instanceRegistry: { address: 'instance-registry.contract.tornadocash.eth' },
   deployer: { address: 'deployer.contract.tornadocash.eth' },
   vesting: {
     team1: {
