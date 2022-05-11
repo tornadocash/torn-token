@@ -9,6 +9,7 @@
     "config.js",
     "contracts/*"
   ],
+  "types": "index.d.ts",
   "scripts": {
     "compile": "truffle compile",
     "coverage": "yarn compile && truffle run coverage",
@@ -41,6 +42,7 @@
     "@openzeppelin/contracts": "^3.1.0",
     "eth-sig-util": "^2.5.3",
     "ethereumjs-util": "^7.0.3",
-    "web3": "^1.2.11"
+    "web3": "^1.2.11",
+    "web3-utils": "^1.7.3"
   }
 }
