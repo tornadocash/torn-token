@@ -13,4 +13,5 @@ $ yarn test
 ```
 
 ## Licence
+
 MIT
