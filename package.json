@@ -1,13 +1,19 @@
 {
   "name": "torn-token",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "main": "config.js",
   "repository": "https://github.com/tornadocash/torn-token.git",
   "author": "Tornadocash team <hello@tornado.cash>",
   "license": "MIT",
+  "keywords": [
+    "web3",
+    "ethereum",
+    "solidity"
+  ],
   "files": [
     "config.js",
-    "contracts/*"
+    "contracts/*",
+    "index.d.ts"
   ],
   "types": "index.d.ts",
   "scripts": {
